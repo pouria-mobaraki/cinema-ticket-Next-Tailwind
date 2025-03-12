@@ -1,9 +1,11 @@
+import Slider from "@/components/Slider";
 
 
 export default function Home() {
   return (
    <div className="flex p-8 text-blue-400">
     porههه
+    <Slider />
    </div>
   );
 }
