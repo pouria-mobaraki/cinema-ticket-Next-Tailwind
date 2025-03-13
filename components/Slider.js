@@ -9,7 +9,7 @@ const Slider = () => {
   const slides = [
     { id: 1, title: "فیلم اول", img: "/images/Rahaposter.jpg" },
     { id: 2, title: "فیلم دوم", img: "/images/temsahposter.jpg" },
-    { id: 3, title: "فیلم سوم", img: "/images/musaposter2.png" },
+    { id: 3, title: "فیلم سوم", img: "/images/moosa-banner.jpg" },
     { id: 4, title: "فیلم چهارم", img: "/images/bambbol.jpg" },
   ];
 

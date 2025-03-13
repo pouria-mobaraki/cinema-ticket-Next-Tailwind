@@ -1,27 +1,27 @@
 export async function GET() {
-    const movies = [
-      {
-        id: 1,
-        title: "The Dark Knight",
-        poster: "/images/dark-knight.jpg",
-        banner: "/images/dark-knight-banner.jpg",
-        genre: ["Action", "Drama"],
-        rating: 9.0,
-        releaseDate: "2008-07-18",
-        duration: "152 min",
-      },
-      {
-        id: 2,
-        title: "Inception",
-        poster: "/images/inception.jpg",
-        banner: "/images/inception-banner.jpg",
-        genre: ["Sci-Fi", "Action"],
-        rating: 8.8,
-        releaseDate: "2010-07-16",
-        duration: "148 min",
-      },
-    ];
-  
-    return Response.json(movies);
-  }
-  
+  const movies = [
+    {
+      id: 1,
+      title: "رها",
+      genre: "Drama",
+      rating: 8.5,
+      image: "/images/Rahaposter.jpg",
+    },
+    {
+      id: 2,
+      title: "موسی",
+      genre: "Sci-Fi",
+      rating: 8.9,
+      image: "/images/musaposter.jpg",
+    },
+    {
+      id: 3,
+      title: "تمساح خونی",
+      genre: "Action",
+      rating: 8.0,
+      image: "/images/temsahposter.jpg",
+    },
+  ];
+
+  return Response.json(movies);
+}
