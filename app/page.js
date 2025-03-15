@@ -1,5 +1,6 @@
 import Slider from "@/components/Slider";
-import MovieCard from "@/components/MovieCard";
+import MoviesPage from "@/components/MoviesPage";
+
 
 async function getMovies() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL || "http://localhost:3000";
@@ -17,18 +18,12 @@ async function getMovies() {
 export default async function Home() {
   const movies = await getMovies();
 
+
   return (
    <div >
     <Slider />
 
-    <main className="container mx-auto p-4 text-center mt-15 ">
-      <h1 className="text-3xl font-bold text-yellow-500 mb-8">🎬 لیست فیلم‌ها</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
-      </div>
-    </main>
+    <MoviesPage movies={movies} />
 
    </div>
   );
