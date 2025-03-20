@@ -1,4 +1,5 @@
 
+import Footer from "@/components/Footer";
 import "./globals.css";
 import Header from "@/components/Header";
 
@@ -15,7 +16,7 @@ export default function RootLayout({ children }) {
         
         <Header />
         <main className="container mx-auto p-4">{children}</main>
-       
+       <Footer/>
       </body>
     </html>
   );

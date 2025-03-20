@@ -10,9 +10,9 @@ export default function MoviesPage({ movies }) {
   });
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 mt-15">
       {/* فیلتر ژانر */}
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6 bg-black p-4 rounded-lg shadow-lg">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-7 p-4 rounded-lg shadow-lg bg-gradient-to-r from-yellow-500 to-black">
         <label className="text-yellow-400 font-bold">فیلتر بر اساس ژانر:</label>
         <select
           value={genre}
