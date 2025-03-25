@@ -1,9 +1,11 @@
 "use client";
+import { useSearch } from "@/context/SearchContext";
 import Link from "next/link";
 import { useState } from "react";
 
 export default function Header() {
-  const [search, setSearch] = useState("");
+  const { search, setSearch } = useSearch(); // دریافت مقدار جستجو از Context
+  // const [search, setSearch] = useState("");
 
   return (
     <header className="bg-gray-100 text-gray-900 py-3 px-6 flex items-center justify-between shadow-lg">

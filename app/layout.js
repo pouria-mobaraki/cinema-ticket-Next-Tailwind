@@ -2,6 +2,7 @@
 import Footer from "@/components/Footer";
 import "./globals.css";
 import Header from "@/components/Header";
+import { SearchProvider } from "@/context/SearchContext";
 
 
 export const metadata = {
@@ -13,10 +14,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa">
        <body className="bg-white text-gray-900">
-        
+        <SearchProvider>
         <Header />
         <main className="container mx-auto p-4">{children}</main>
        <Footer/>
+       </SearchProvider>
       </body>
     </html>
   );

@@ -1,14 +1,18 @@
 "use client";
 import { useState } from "react";
 import MovieCard from "./MovieCard";
+import { useSearch } from "@/context/SearchContext";
 
 export default function MoviesPage({ movies }) {
+  const {search} = useSearch()
   const [genre, setGenre] = useState("all");
 
   const filteredMovies = movies.filter((movie) => {
-    return genre === "all" || movie.genre.includes(genre);
+    return (
+      (genre === "all" || movie.genre.includes(genre)) &&
+      movie.title.toLowerCase().includes(search.toLowerCase()) // فیلتر بر اساس جستجو
+    );
   });
-
   return (
     <div className="container mx-auto p-4 mt-15">
       {/* فیلتر ژانر */}
