@@ -17,9 +17,23 @@ export async function GET() {
     {
       id: 3,
       title: "تمساح خونی",
-      genre: "Action",
+      genre: "Comedy",
       rating: 8.0,
       image: "/images/temsahposter.jpg",
+    },
+    {
+      id: 4,
+      title: "بامبولک",
+      genre: "Comedy",
+      rating: 6.2,
+      image: "/images/bambbol.jpg",
+    },
+    {
+      id: 5,
+      title: "پیشمرگ",
+      genre: "Action",
+      rating: 7.2,
+      image: "/images/pishmarg.jpg",
     },
   ];
 

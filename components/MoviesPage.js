@@ -24,9 +24,10 @@ export default function MoviesPage({ movies }) {
           className="px-4 py-2 border rounded-lg bg-yellow-500 text-black font-semibold focus:outline-none focus:ring-2 focus:ring-yellow-400"
         >
           <option value="all">🎭 همه ژانرها</option>
-          <option value="Action">🔥 اکشن</option>
+          <option value="Sci-Fi">🔥 علمی-تخیلی</option>
           <option value="Drama">🎭 درام</option>
           <option value="Comedy">😂 کمدی</option>
+          <option value="Action">🔥 اکشن</option>
         </select>
       </div>
 

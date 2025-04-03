@@ -11,6 +11,7 @@ const Slider = () => {
     { id: 2, title: "فیلم دوم", img: "/images/temsahposter.jpg" },
     { id: 3, title: "فیلم سوم", img: "/images/musaposter2.png" },
     { id: 4, title: "فیلم چهارم", img: "/images/bambbol.jpg" },
+    { id: 5, title: "فیلم پنجم", img: "/images/pishmarg.jpg" }
   ];
 
   return (
