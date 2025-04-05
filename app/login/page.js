@@ -1,10 +1,11 @@
 "use client";
 
 import { useFormState } from "react-dom";
-import { loginUser } from "./actions";
+import { loginUser } from "./action";
+
 
 export default function LoginPage() {
-  // const [state, formAction] = useFormState(loginUser, null);
+  const [state, formAction] = useFormState(loginUser, null);
 
   return (
     <div
@@ -17,7 +18,7 @@ export default function LoginPage() {
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">ورود به حساب</h2>
 
         <form
-          // action={formAction}
+          action={formAction}
           className="w-full flex flex-col gap-4"
         >
           <input
@@ -34,9 +35,9 @@ export default function LoginPage() {
           </button>
 
           {/* پیام خطا */}
-          {/* {state?.error && (
+          {state?.error && (
             <p className="text-red-500 text-sm mt-2">{state.error}</p>
-          )} */}
+          )}
         </form>
       </div>
     </div>
