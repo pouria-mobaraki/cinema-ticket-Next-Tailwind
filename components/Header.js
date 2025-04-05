@@ -1,11 +1,27 @@
-"use client";
-import { useSearch } from "@/context/SearchContext";
-import Link from "next/link";
-import { useState } from "react";
+'use client';
+
+import { useSearch } from '@/context/SearchContext';
+import { getCookie } from 'cookies-next';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
   const { search, setSearch } = useSearch(); // دریافت مقدار جستجو از Context
-  // const [search, setSearch] = useState("");
+  const [user, setUser] = useState(undefined);
+
+  useEffect(() => {
+    try {
+      const userName = getCookie('user');
+      if (userName) {
+        setUser(userName);
+      } else {
+        setUser(null);
+      }
+    } catch (error) {
+      console.error('خطا در خواندن کوکی:', error);
+      setUser(null);
+    }
+  }, []);
 
   return (
     <header className="bg-gray-100 text-gray-900 py-3 px-6 flex items-center justify-between shadow-lg">
@@ -27,15 +43,27 @@ export default function Header() {
 
       {/* بخش چپ - لینک‌ها و دکمه‌ها */}
       <div className="flex items-center space-x-15">
-        <Link href="/" className="hover:text-yellow-600">خانه</Link>
-        <Link href="/movies" className="hover:text-yellow-600">فیلم‌ها</Link>
-        <Link href="/about" className="hover:text-yellow-600">درباره ما</Link>
-        <Link
-          href="/login"
-          className="bg-yellow-500 px-4 py-2 rounded-lg text-gray-900 hover:bg-yellow-600"
-        >
-          ورود | ثبت‌ نام
+        <Link href="/" className="hover:text-yellow-600">
+          خانه
         </Link>
+        <Link href="/movies" className="hover:text-yellow-600">
+          فیلم‌ها
+        </Link>
+        <Link href="/about" className="hover:text-yellow-600">
+          درباره ما
+        </Link>
+        {user === undefined ? (
+          <span>در حال بارگذاری...</span>
+        ) : user ? (
+          <span className="text-gray-900">سلام، {user}</span>
+        ) : (
+          <Link
+            href="/login"
+            className="bg-yellow-500 px-4 py-2 rounded-lg text-gray-900 hover:bg-yellow-600"
+          >
+            ورود | ثبت‌نام
+          </Link>
+        )}
       </div>
     </header>
   );

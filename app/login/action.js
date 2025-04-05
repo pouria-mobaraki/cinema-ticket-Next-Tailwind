@@ -12,10 +12,10 @@ export async function loginUser(state, formData) {
 
   // ست کردن کوکی
   cookies().set("user", username, {
-    httpOnly: true,
+    httpOnly: false,
     path: "/",
     maxAge: 60 * 60 * 24, // یک روز
   });
 
-  redirect("/movies");
+  redirect("/");
 }
