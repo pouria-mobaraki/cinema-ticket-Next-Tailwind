@@ -13,11 +13,12 @@ export async function loginUser(state, formData) {
   // ست کردن کوکی
   cookies().set("user", username, {
     httpOnly: false,
-    secure: true,
+    secure: process.env.NODE_ENV === "production",
     sameSite: "Lax",
     path: "/",
     maxAge: 60 * 60 * 24, // یک روز
   });
 
+  // ریدایرکت به صفحه اصلی
   redirect("/");
 }

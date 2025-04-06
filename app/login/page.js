@@ -2,10 +2,13 @@
 
 import { useFormState } from "react-dom";
 import { loginUser } from "./action";
+import { useRouter } from "next/navigation";
 
 
 export default function LoginPage() {
   const [state, formAction] = useFormState(loginUser, null);
+  
+  
 
   return (
     <div
@@ -20,6 +23,7 @@ export default function LoginPage() {
         <form
           action={formAction}
           className="w-full flex flex-col gap-4"
+          
         >
           <input
             type="text"
@@ -30,6 +34,7 @@ export default function LoginPage() {
           <button
             type="submit"
             className="bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded font-semibold"
+           
           >
             ورود
           </button>

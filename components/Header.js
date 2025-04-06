@@ -1,27 +1,18 @@
 'use client';
 
-import { useSearch } from '@/context/SearchContext';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { getCookie } from 'cookies-next';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
 export default function Header() {
-  const { search, setSearch } = useSearch(); // دریافت مقدار جستجو از Context
   const [user, setUser] = useState(undefined);
+  const pathname = usePathname();
 
   useEffect(() => {
-    try {
-      const userName = getCookie('user');
-      if (userName) {
-        setUser(userName);
-      } else {
-        setUser(null);
-      }
-    } catch (error) {
-      console.error('خطا در خواندن کوکی:', error);
-      setUser(null);
-    }
-  }, []);
+    const userName = getCookie('user');
+    setUser(userName || null);
+  }, [pathname]);
 
   return (
     <header className="bg-gray-100 text-gray-900 py-3 px-6 flex items-center justify-between shadow-lg">
@@ -35,8 +26,6 @@ export default function Header() {
         <input
           type="text"
           placeholder="... جستجوی فیلم"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
           className="w-full px-4 py-2 rounded-lg text-center bg-gray-200 text-gray-900 border border-gray-300 focus:outline-none focus:border-yellow-600"
         />
       </div>
