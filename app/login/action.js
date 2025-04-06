@@ -13,6 +13,8 @@ export async function loginUser(state, formData) {
   // ست کردن کوکی
   cookies().set("user", username, {
     httpOnly: false,
+    secure: true,
+    sameSite: "Lax",
     path: "/",
     maxAge: 60 * 60 * 24, // یک روز
   });
