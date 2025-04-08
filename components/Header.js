@@ -18,7 +18,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-gray-100 text-gray-900 py-3 px-6 flex items-center justify-between shadow-lg fixed top-0 left-0 right-0 z-50">
+    <header className="bg-gray-100 text-gray-900 py-3 px-6 flex items-center justify-between shadow-lg fixed top-0 left-0 right-0 z-50 ">
       {/* بخش راست - لوگو */}
       <div className="text-2xl font-bold">
         <Link href="/">🎬 CinemaTicket</Link>

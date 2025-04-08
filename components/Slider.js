@@ -15,7 +15,7 @@ const Slider = () => {
   ];
 
   return (
-    <div className="w-full max-w-4xl mx-auto mt-6">
+    <div className="w-full max-w-4xl mx-auto mt-20">
       <Swiper
         modules={[Autoplay]}
         autoplay={{ delay: 3000 }}
