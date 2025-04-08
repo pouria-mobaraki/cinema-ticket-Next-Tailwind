@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function MovieCard({ movie }) {
   return (
@@ -23,7 +24,7 @@ export default function MovieCard({ movie }) {
 
         {/* دکمه جزئیات بیشتر */}
         <button className="mt-3 w-full bg-yellow-500 text-black py-2 rounded-lg hover:bg-yellow-400">
-          جزئیات بیشتر
+           <Link href={`/movies/${movie.id}`}>جزییات بیشتر</Link>
         </button>
       </div>
     </div>
