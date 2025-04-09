@@ -53,8 +53,8 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/movies" className="block px-4 py-2 hover:text-yellow-600">
-              فیلم‌ها
+            <Link href="/theaters" className="block px-4 py-2 hover:text-yellow-600">
+              تئاتر
             </Link>
           </li>
           <li>

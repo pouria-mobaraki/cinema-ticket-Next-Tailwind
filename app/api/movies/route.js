@@ -35,6 +35,13 @@ export async function GET() {
       rating: 7.2,
       image: "/images/pishmarg.jpg",
     },
+    {
+      id: 6,
+      title: "معجزه پروین",
+      genre: "Drama",
+      rating: 7.8,
+      image: "/images/parvin.png",
+    },
   ];
 
   return Response.json(movies);

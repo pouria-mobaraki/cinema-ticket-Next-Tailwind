@@ -23,9 +23,11 @@ export default function MovieCard({ movie }) {
         <p className="text-sm text-yellow-300">⭐ امتیاز: {movie.rating}</p>
 
         {/* دکمه جزئیات بیشتر */}
+        <Link href={`/movies/${movie.id}`}>
         <button className="mt-3 w-full bg-yellow-500 text-black py-2 rounded-lg hover:bg-yellow-400">
-           <Link href={`/movies/${movie.id}`}>جزییات بیشتر</Link>
+          جزییات بیشتر
         </button>
+        </Link>
       </div>
     </div>
   );
