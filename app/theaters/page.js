@@ -13,7 +13,7 @@ async function getTheaters() {
   });
 
   if (!res.ok) {
-    throw new Error("Failed to fetch movies");
+    throw new Error("Failed to fetch theaters");
   }
 
   return res.json();
@@ -23,7 +23,7 @@ export default async function TheatersPage() {
   const theaters = await getTheaters();
 
   return (
-    <div className="min-h-screen bg-black text-white py-10 px-4 mt-15">
+    <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-yellow-700 py-10 px-4 mt-15">
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {theaters.map((theater) => (
           <TheaterCard key={theater.id} theater={theater} />

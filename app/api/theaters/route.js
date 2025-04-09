@@ -2,17 +2,24 @@ export async function GET() {
     const theaters = [
       {
         id: 1,
-        title: "نمایش شب دهم",
-        genre: "درام",
+        title: " کورالاین ",
+        genre: "کمدی",
         rating: 9.1,
-        image: "/images/theater1.jpg",
+        image: "/images/koralineT.webp",
       },
       {
         id: 2,
-        title: "تئاتر سایه",
-        genre: "تجربی",
+        title: "کتابخانه نیمه شب",
+        genre: "درام",
         rating: 8.7,
-        image: "/images/theater2.jpg",
+        image: "/images/ketabkhaneT.webp",
+      },
+      {
+        id: 3,
+        title: "مضحکه سیاه",
+        genre: "کمدی",
+        rating: 8.7,
+        image: "/images/mazhakeT.webp",
       },
       // ادامه...
     ];
