@@ -3,10 +3,13 @@
 import { useState, useEffect } from 'react';
 import { getCookie } from 'cookies-next';
 import Link from 'next/link';
+import { useSearch } from "@/context/SearchContext";
+
 
 export default function Header() {
   const [user, setUser] = useState(undefined);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { search, setSearch } = useSearch();
 
   useEffect(() => {
     const userName = getCookie('user');
@@ -30,6 +33,8 @@ export default function Header() {
           type="text"
           placeholder="... جستجوی فیلم"
           className="w-full px-4 py-2 rounded-lg text-center bg-gray-200 text-gray-900 border border-gray-300 focus:outline-none focus:border-yellow-600"
+          value={search}
+          onChange={(e)=>setSearch(e.target.value)}
         />
       </div>
 
